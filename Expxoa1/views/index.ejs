@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Danh sách sinh viên</h1>
+    <ul>
+        <% sinhviens.forEach(function(sinhvien){ %>
+        <li>
+            <%= sinhvien.name %>
+            <img src="\uploads/<%= sinhvien.picture %>">
+            <form action="/sinhvien/<%= sinhvien._id %>?_method=DELETE" method="post">
+                <button type="submit">delete</button>
+            </form>
+        </li>
+        <%}); %>
+    </ul>
+    <a href="/sinhvien/form">Add sinh viên</a>
+</body>
+</html>
